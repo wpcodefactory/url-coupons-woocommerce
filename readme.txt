@@ -1,13 +1,13 @@
 === URL Coupons for WooCommerce ===
-Contributors: algoritmika, anbinder
+Contributors: wpcodefactory, algoritmika, anbinder
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 5.8
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WooCommerce URL coupons.
+Let your customers apply standard WooCommerce discount coupons via URL.
 
 == Description ==
 
@@ -45,6 +45,10 @@ With [URL Coupons for WooCommerce Pro](https://wpfactory.com/item/url-coupons-wo
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.6.3 - 20/01/2022 =
+* Dev - Shortcodes - `[alg_wc_url_coupons_print_notices]` - Now checking if `wc_print_notices()` function exists.
+* WC tested up to: 6.1.
 
 = 1.6.2 - 09/12/2021 =
 * Dev - Advanced - "Payment request buttons: Apply coupons on single product pages" options added ("WooCommerce Stripe Gateway" and "WooCommerce Payments") (defaults to `no`).

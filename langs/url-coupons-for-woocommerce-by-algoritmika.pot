@@ -26,8 +26,8 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:142
-#: includes/pro/class-alg-wc-url-coupons-pro.php:155
+#: includes/pro/class-alg-wc-url-coupons-pro.php:144
+#: includes/pro/class-alg-wc-url-coupons-pro.php:157
 #: includes/settings/class-alg-wc-settings-url-coupons.php:25
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:62
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:259
@@ -35,25 +35,25 @@ msgstr ""
 msgid "URL Coupons"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:142
+#: includes/pro/class-alg-wc-url-coupons-pro.php:144
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:67
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:232
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:259
 msgid "Redirect URL"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:144
-#: includes/pro/class-alg-wc-url-coupons-pro.php:156
+#: includes/pro/class-alg-wc-url-coupons-pro.php:146
+#: includes/pro/class-alg-wc-url-coupons-pro.php:158
 #, php-format
 msgid "For the \"%s\" plugin."
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:144
-#: includes/pro/class-alg-wc-url-coupons-pro.php:156
+#: includes/pro/class-alg-wc-url-coupons-pro.php:146
+#: includes/pro/class-alg-wc-url-coupons-pro.php:158
 msgid "URL Coupons for WooCommerce"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:155
+#: includes/pro/class-alg-wc-url-coupons-pro.php:157
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:71
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:121
 msgid "Notice"

@@ -2,13 +2,13 @@
 /*
 Plugin Name: URL Coupons for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
-Description: WooCommerce URL coupons.
-Version: 1.6.2
-Author: Algoritmika Ltd
-Author URI: https://algoritmika.com
+Description: Let your customers apply standard WooCommerce discount coupons via URL.
+Version: 1.6.3
+Author: WPFactory
+Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
 Domain Path: /langs
-WC tested up to: 5.9
+WC tested up to: 6.1
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -29,9 +29,9 @@ if ( 'url-coupons-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.6.2' );
+defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.6.3' );
 
-defined( 'ALG_WC_URL_COUPONS_FILE' )    || define( 'ALG_WC_URL_COUPONS_FILE',    __FILE__ );
+defined( 'ALG_WC_URL_COUPONS_FILE' ) || define( 'ALG_WC_URL_COUPONS_FILE', __FILE__ );
 
 require_once( 'includes/class-alg-wc-url-coupons.php' );
 
