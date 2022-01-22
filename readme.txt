@@ -46,6 +46,9 @@ With [URL Coupons for WooCommerce Pro](https://wpfactory.com/item/url-coupons-wo
 
 == Changelog ==
 
+= 1.6.4 - 22/01/2022 =
+* Add deploy script.
+
 = 1.6.3 - 20/01/2022 =
 * Dev - Shortcodes - `[alg_wc_url_coupons_print_notices]` - Now checking if `wc_print_notices()` function exists.
 * WC tested up to: 6.1.

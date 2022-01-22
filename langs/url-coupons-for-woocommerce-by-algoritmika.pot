@@ -1,6 +1,37 @@
-#: includes/class-alg-wc-url-coupons-core.php:98
-#: includes/class-alg-wc-url-coupons-core.php:99
-msgid "Discount"
+# Copyright (C) 2022 WPFactory
+# This file is distributed under the same license as the URL Coupons for WooCommerce plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: URL Coupons for WooCommerce 1.6.4-dev\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/url-coupons-for-woocommerce-by-algoritmika\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-01-23T00:33:40+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: url-coupons-for-woocommerce-by-algoritmika\n"
+
+#. Plugin Name of the plugin
+msgid "URL Coupons for WooCommerce"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wpfactory.com/item/url-coupons-woocommerce/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Let your customers apply standard WooCommerce discount coupons via URL."
+msgstr ""
+
+#. Author of the plugin
+msgid "WPFactory"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://wpfactory.com"
 msgstr ""
 
 #: includes/class-alg-wc-url-coupons-core.php:349
@@ -18,45 +49,15 @@ msgstr ""
 msgid "Coupon code already applied!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons.php:130
-msgid "Settings"
-msgstr ""
-
 #: includes/class-alg-wc-url-coupons.php:133
 msgid "Go Pro"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:144
-#: includes/pro/class-alg-wc-url-coupons-pro.php:157
 #: includes/settings/class-alg-wc-settings-url-coupons.php:25
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:62
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:259
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:71
 msgid "URL Coupons"
-msgstr ""
-
-#: includes/pro/class-alg-wc-url-coupons-pro.php:144
-#: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:67
-#: includes/settings/class-alg-wc-url-coupons-settings-general.php:232
-#: includes/settings/class-alg-wc-url-coupons-settings-general.php:259
-msgid "Redirect URL"
-msgstr ""
-
-#: includes/pro/class-alg-wc-url-coupons-pro.php:146
-#: includes/pro/class-alg-wc-url-coupons-pro.php:158
-#, php-format
-msgid "For the \"%s\" plugin."
-msgstr ""
-
-#: includes/pro/class-alg-wc-url-coupons-pro.php:146
-#: includes/pro/class-alg-wc-url-coupons-pro.php:158
-msgid "URL Coupons for WooCommerce"
-msgstr ""
-
-#: includes/pro/class-alg-wc-url-coupons-pro.php:157
-#: includes/settings/class-alg-wc-url-coupons-settings-notices.php:71
-#: includes/settings/class-alg-wc-url-coupons-settings-notices.php:121
-msgid "Notice"
 msgstr ""
 
 #: includes/settings/class-alg-wc-settings-url-coupons.php:59
@@ -102,9 +103,7 @@ msgid "Enable"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:49
-msgid ""
-"Save coupons when cart is emptied. Coupons will be reapplied when some "
-"product is added to the cart."
+msgid "Save coupons when cart is emptied. Coupons will be reapplied when some product is added to the cart."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:55
@@ -124,8 +123,13 @@ msgid "Remove \"add to cart\" key"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:65
-#, php-format
 msgid "Will remove %s key on \"%s\" option."
+msgstr ""
+
+#: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:67
+#: includes/settings/class-alg-wc-url-coupons-settings-general.php:232
+#: includes/settings/class-alg-wc-url-coupons-settings-general.php:259
+msgid "Redirect URL"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:67
@@ -138,7 +142,6 @@ msgid "Force coupon redirect"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:75
-#, php-format
 msgid "Force coupon redirect after %s action."
 msgstr ""
 
@@ -151,7 +154,6 @@ msgid "Enable this if you want to set cookie when URL coupon has been applied."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:85
-#, php-format
 msgid "Cookie name will be %s."
 msgstr ""
 
@@ -176,9 +178,7 @@ msgid "Disable"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:101
-msgid ""
-"Check this if you have \"WP Rocket\" plugin installed, and having issues "
-"with cart being empty after you apply URL coupon and add a product."
+msgid "Check this if you have \"WP Rocket\" plugin installed, and having issues with cart being empty after you apply URL coupon and add a product."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:107
@@ -214,15 +214,11 @@ msgid "URL coupons key"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:82
-msgid ""
-"URL key. If you change this, make sure it's unique and is not used anywhere "
-"on your site (e.g. by another plugin)."
+msgid "URL key. If you change this, make sure it's unique and is not used anywhere on your site (e.g. by another plugin)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:83
-#, php-format
-msgid ""
-"Your customers can apply shop's standard coupons by visiting URL. E.g.: %s."
+msgid "Your customers can apply shop's standard coupons by visiting URL. E.g.: %s."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:90
@@ -230,9 +226,7 @@ msgid "Force session start"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:92
-msgid ""
-"Enable this if URL coupons are not being applied to the guests (i.e. not "
-"logged users)."
+msgid "Enable this if URL coupons are not being applied to the guests (i.e. not logged users)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:98
@@ -240,9 +234,7 @@ msgid "Add products to cart"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:100
-msgid ""
-"Automatically adds coupon's products to the cart for \"Fixed product discount"
-"\" type coupons."
+msgid "Automatically adds coupon's products to the cart for \"Fixed product discount\" type coupons."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:111
@@ -286,9 +278,7 @@ msgid "No"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:149
-msgid ""
-"No, if there is correct product already in the cart (for \"Fixed product "
-"discount\" type coupons)"
+msgid "No, if there is correct product already in the cart (for \"Fixed product discount\" type coupons)"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:153
@@ -296,9 +286,7 @@ msgid "Check product"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:154
-msgid ""
-"For \"Fixed product discount\" type coupons - additionally check if correct "
-"product is added to the cart (i.e. if coupon is valid for product)."
+msgid "For \"Fixed product discount\" type coupons - additionally check if correct product is added to the cart (i.e. if coupon is valid for product)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:160
@@ -315,7 +303,6 @@ msgstr ""
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:162
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:172
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:182
-#, php-format
 msgid "Available placeholder(s): %s."
 msgstr ""
 
@@ -346,8 +333,7 @@ msgid "Hide"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:203
-msgid ""
-"Enable this if you want to hide standard coupon input field on the cart page."
+msgid "Enable this if you want to hide standard coupon input field on the cart page."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:209
@@ -355,9 +341,7 @@ msgid "Checkout page"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:211
-msgid ""
-"Enable this if you want to hide standard coupon input field on the checkout "
-"page."
+msgid "Enable this if you want to hide standard coupon input field on the checkout page."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:224
@@ -369,9 +353,7 @@ msgid "Redirect when coupon code is successfully applied."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:234
-msgid ""
-"Possible values: No redirect; redirect to cart; redirect to checkout; "
-"redirect to custom local URL."
+msgid "Possible values: No redirect; redirect to cart; redirect to checkout; redirect to custom local URL."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:241
@@ -396,7 +378,6 @@ msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:258
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:70
-#, php-format
 msgid "Will add \"%s\" field to each coupon admin edit page."
 msgstr ""
 
@@ -405,16 +386,11 @@ msgid "Notes"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:275
-#, php-format
-msgid ""
-"If you are using URL to a page where no WooCommerce notices are displayed, "
-"try adding our %s shortcode to the content."
+msgid "If you are using URL to a page where no WooCommerce notices are displayed, try adding our %s shortcode to the content."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:277
-msgid ""
-"Please note that this shortcode will print all WooCommerce notices (i.e. not "
-"only from our plugin, or notices related to the coupons)."
+msgid "Please note that this shortcode will print all WooCommerce notices (i.e. not only from our plugin, or notices related to the coupons)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:25
@@ -434,9 +410,7 @@ msgid "Delay"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:51
-msgid ""
-"Delay the \"Coupon code applied successfully\" notice if the cart is empty "
-"when applying a URL coupon."
+msgid "Delay the \"Coupon code applied successfully\" notice if the cart is empty when applying a URL coupon."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:52
@@ -455,14 +429,17 @@ msgstr ""
 msgid "Notice per coupon"
 msgstr ""
 
+#: includes/settings/class-alg-wc-url-coupons-settings-notices.php:71
+#: includes/settings/class-alg-wc-url-coupons-settings-notices.php:121
+msgid "Notice"
+msgstr ""
+
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:79
 msgid "Override global notice"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:80
-msgid ""
-"This will remove the global \"Custom notice\" notice, in case if there are "
-"any \"per coupon\" notices to display."
+msgid "This will remove the global \"Custom notice\" notice, in case if there are any \"per coupon\" notices to display."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:88
@@ -470,9 +447,7 @@ msgid "Override default notice"
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:90
-msgid ""
-"This will remove the default \"Coupon code applied successfully\" notice, in "
-"case if there are any custom notices to display."
+msgid "This will remove the default \"Coupon code applied successfully\" notice, in case if there are any custom notices to display."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:97
@@ -486,12 +461,7 @@ msgid "Possible values: \"Add\" or \"Append\"."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:99
-msgid ""
-"This makes a difference only if you have multiple notices displayed: \"Add\" "
-"option will add it as a new notice (i.e. will display it as a multiple "
-"notices), while \"Append\" option will merge it with the existing notice, "
-"for example, with the default \"Coupon was successfully applied\" notice (i."
-"e. will display it as a single notice)."
+msgid "This makes a difference only if you have multiple notices displayed: \"Add\" option will add it as a new notice (i.e. will display it as a multiple notices), while \"Append\" option will merge it with the existing notice, for example, with the default \"Coupon was successfully applied\" notice (i.e. will display it as a single notice)."
 msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:105
@@ -510,7 +480,6 @@ msgstr ""
 
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:112
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:127
-#, php-format
 msgid "Ignored, unless \"%s\" option is set to \"%s\"."
 msgstr ""
 
