@@ -92,10 +92,11 @@ final class Alg_WC_URL_Coupons {
 	/**
 	 * Include required core files used in admin and on the frontend.
 	 *
-	 * @version 1.6.0
+	 * @version 1.6.4
 	 * @since   1.0.0
 	 */
 	function includes() {
+		require_once( 'alg-wc-url-coupons-functions.php' );
 		$this->core = require_once( 'class-alg-wc-url-coupons-core.php' );
 	}
 

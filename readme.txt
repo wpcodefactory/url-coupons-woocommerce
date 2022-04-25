@@ -1,9 +1,9 @@
 === URL Coupons for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder
+Contributors: wpcodefactory, algoritmika, anbinder, Karzin
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 5.8
-Stable tag: 1.6.3
+Tested up to: 5.9
+Stable tag: 1.6.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -38,6 +38,13 @@ With [URL Coupons for WooCommerce Pro](https://wpfactory.com/item/url-coupons-wo
 * We are open to your suggestions and feedback. Thank you for using or trying out one of our plugins!
 * [Visit plugin site](https://wpfactory.com/item/url-coupons-woocommerce/).
 
+== Frequently Asked Questions ==
+= What can I do if the coupon is not being applied as it should? =
+Please try to change one option below at a time and test again:
+-  Change **Advanced > Main hook > Hook** option.
+-  Set **Advanced > Data storage type** as **Cookie**.
+-  Enable **Advanced > Javascript reload** option.
+
 == Installation ==
 
 1. Upload the entire plugin folder to the `/wp-content/plugins/` directory.
@@ -46,7 +53,15 @@ With [URL Coupons for WooCommerce Pro](https://wpfactory.com/item/url-coupons-wo
 
 == Changelog ==
 
-= 1.6.4 - 22/01/2022 =
+= 1.6.4 - 25/04/2022 =
+* Dev - Advanced - Add "Data storage type" option.
+* Dev - Advanced - Main hook - Add hook option.
+* Dev - Advanced - Add "Javascript reload" option.
+* Dev - General - Add "Force session start earlier and everywhere" option.
+* Dev - Add `alg_wc_url_coupons_apply_url_coupon_validation` filter.
+* Dev - Add `alg_wc_url_coupons_keys_to_remove_on_redirect` filter.
+* WC tested up to: 6.4.
+* Tested up to: 5.9.
 * Add deploy script.
 
 = 1.6.3 - 20/01/2022 =

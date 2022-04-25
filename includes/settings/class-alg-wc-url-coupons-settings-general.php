@@ -87,11 +87,20 @@ class Alg_WC_URL_Coupons_Settings_General extends Alg_WC_URL_Coupons_Settings_Se
 				'type'     => 'text',
 			),
 			array(
-				'title'    => __( 'Force session start', 'url-coupons-for-woocommerce-by-algoritmika' ),
-				'desc'     => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				'title'    => __( 'Session', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				'desc'     => __( 'Force session start when a URL with the coupon key is accessed', 'url-coupons-for-woocommerce-by-algoritmika' ),
 				'desc_tip' => __( 'Enable this if URL coupons are not being applied to the guests (i.e. not logged users).', 'url-coupons-for-woocommerce-by-algoritmika' ),
 				'id'       => 'alg_wc_url_coupons_force_start_session',
 				'default'  => 'yes',
+				'checkboxgroup' => 'start',
+				'type'     => 'checkbox',
+			),
+			array(
+				'desc'     => __( 'Force session start earlier and everywhere', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				'desc_tip' => __( 'Enable this if URL coupons are still not being applied to the guests users, most probably on cached sites.', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				'id'       => 'alg_wc_url_coupons_force_start_session_earlier',
+				'default'  => 'no',
+				'checkboxgroup' => 'end',
 				'type'     => 'checkbox',
 			),
 			array(
