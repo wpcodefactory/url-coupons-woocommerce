@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Functions.
  *
- * @version 1.6.4
+ * @version 1.6.5
  * @since   1.6.4
  *
  * @author  Algoritmika Ltd.
@@ -38,7 +38,7 @@ if ( ! function_exists( 'alg_wc_url_coupons_data_storage_set' ) ) {
 	/**
 	 * alg_wc_url_coupons_data_storage_set.
 	 *
-	 * @version 1.6.4
+	 * @version 1.6.5
 	 * @since   1.6.4
 	 *
 	 * @param $key
@@ -52,7 +52,11 @@ if ( ! function_exists( 'alg_wc_url_coupons_data_storage_set' ) ) {
 		if ( 'session' === $storage_type ) {
 			WC()->session->set( $key, $value );
 		} elseif ( 'cookie' === $storage_type ) {
-			wc_setcookie( $key, json_encode( $value ), ( time() + get_option( 'alg_wc_url_coupons_cookie_sec', 1209600 ) ) );
+			if ( is_null( $value ) ) {
+				wc_setcookie( $key, json_encode( $value ), 1 );
+			} else {
+				wc_setcookie( $key, json_encode( $value ), ( time() + get_option( 'alg_wc_url_coupons_cookie_sec', 1209600 ) ) );
+			}
 		}
 	}
 }

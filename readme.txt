@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, Karzin
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 5.9
-Stable tag: 1.6.4
+Tested up to: 6.0
+Stable tag: 1.6.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,11 @@ Please try to change one option below at a time and test again:
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.6.5 - 19/08/2022 =
+* Fix - Improve the way the cookie is removed.
+* WC tested up to: 6.8.
+* Tested up to: 6.0.
 
 = 1.6.4 - 25/04/2022 =
 * Dev - Advanced - Add "Data storage type" option.
