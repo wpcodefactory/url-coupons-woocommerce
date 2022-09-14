@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the URL Coupons for WooCommerce plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: URL Coupons for WooCommerce 1.6.5\n"
+"Project-Id-Version: URL Coupons for WooCommerce 1.6.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/url-coupons-for-woocommerce-by-algoritmika\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-08-19T19:30:31+02:00\n"
+"POT-Creation-Date: 2022-09-14T03:45:33+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: url-coupons-for-woocommerce-by-algoritmika\n"
@@ -34,26 +34,26 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:395
+#: includes/class-alg-wc-url-coupons-core.php:397
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:173
 msgid "Coupon code applied successfully."
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:402
+#: includes/class-alg-wc-url-coupons-core.php:404
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:193
 msgid "Coupon \"%coupon_code%\" does not exist!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:408
+#: includes/class-alg-wc-url-coupons-core.php:410
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:183
 msgid "Coupon code already applied!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:474
+#: includes/class-alg-wc-url-coupons-core.php:476
 msgid "WP Loaded"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:475
+#: includes/class-alg-wc-url-coupons-core.php:477
 msgid "Init"
 msgstr ""
 

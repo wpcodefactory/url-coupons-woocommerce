@@ -1,8 +1,8 @@
 <?php
 /**
- * URL Coupons for WooCommerce - Core Class
+ * URL Coupons for WooCommerce - Core Class.
  *
- * @version 1.6.4
+ * @version 1.6.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -185,7 +185,7 @@ class Alg_WC_URL_Coupons_Core {
 	/**
 	 * apply_delayed_coupon.
 	 *
-	 * @version 1.6.4
+	 * @version 1.6.6
 	 * @since   1.5.0
 	 *
 	 * @todo    [now] (dev) `$skip_coupons`: `fixed_cart` type?
@@ -196,7 +196,6 @@ class Alg_WC_URL_Coupons_Core {
 	function apply_delayed_coupon( $cart_item_key, $product_id, $quantity, $variation_id, $variation, $cart_item_data ) {
 		$coupons = alg_wc_url_coupons_data_storage_get( 'alg_wc_url_coupons', array() );
 		if ( ! empty( $coupons ) ) {
-			alg_wc_url_coupons_data_storage_set( 'alg_wc_url_coupons', null );
 			$skip_coupons = array();
 			$key          = get_option( 'alg_wc_url_coupons_key', 'alg_apply_coupon' );
 			foreach ( $coupons as $coupon_code ) {
@@ -209,6 +208,9 @@ class Alg_WC_URL_Coupons_Core {
 					$skip_coupons[] = $coupon_code;
 				} else {
 					$result = $this->apply_coupon( $coupon_code, $key );
+					if ( true === $result ) {
+						alg_wc_url_coupons_data_storage_set( 'alg_wc_url_coupons', null );
+					}
 				}
 			}
 			if ( ! empty( $skip_coupons ) ) {

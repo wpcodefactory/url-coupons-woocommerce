@@ -53,6 +53,10 @@ Please try to change one option below at a time and test again:
 
 == Changelog ==
 
+= 1.6.6 - 13/09/2022 =
+* Fix - General - Delay coupon options - Coupon only gets applied if the first product added to cart matches the coupon rules.
+* WC tested up to: 6.9.
+
 = 1.6.5 - 19/08/2022 =
 * Fix - Improve the way the cookie is removed.
 * WC tested up to: 6.8.
