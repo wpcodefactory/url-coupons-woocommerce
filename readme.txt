@@ -3,7 +3,7 @@ Contributors: wpcodefactory, algoritmika, anbinder, Karzin
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 6.0
-Stable tag: 1.6.5
+Stable tag: 1.6.6
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
