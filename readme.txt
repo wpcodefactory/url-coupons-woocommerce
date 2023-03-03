@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, algoritmika, anbinder, Karzin
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 6.0
-Stable tag: 1.6.6
+Tested up to: 6.1
+Stable tag: 1.6.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,11 @@ Please try to change one option below at a time and test again:
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.6.7 - 02/03/2023 =
+* Dev - General - New option: Hide coupon field condition.
+* WC tested up to: 7.4.
+* Tested up to: 6.1.
 
 = 1.6.6 - 13/09/2022 =
 * Fix - General - Delay coupon options - Coupon only gets applied if the first product added to cart matches the coupon rules.

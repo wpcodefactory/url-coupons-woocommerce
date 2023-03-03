@@ -25,7 +25,7 @@ if ( ! function_exists( 'alg_wc_url_coupons_data_storage_get' ) ) {
 	function alg_wc_url_coupons_data_storage_get( $key, $default_value = '' ) {
 		$storage_type = apply_filters( 'alg_wc_url_coupons_data_storage_type', 'session' );
 		$data         = '';
-		if ( 'session' === $storage_type ) {
+		if ( 'session' === $storage_type && isset( WC()->session ) ) {
 			$data = WC()->session->get( $key, $default_value );
 		} elseif ( 'cookie' === $storage_type ) {
 			$data = isset( $_COOKIE[ $key ] ) ? json_decode( stripslashes( $_COOKIE[ $key ] ) ) : $default_value;
@@ -44,12 +44,10 @@ if ( ! function_exists( 'alg_wc_url_coupons_data_storage_set' ) ) {
 	 * @param $key
 	 *
 	 * @param $value
-	 *
-	 * @return string
 	 */
 	function alg_wc_url_coupons_data_storage_set( $key, $value ) {
 		$storage_type = apply_filters( 'alg_wc_url_coupons_data_storage_type', 'session' );
-		if ( 'session' === $storage_type ) {
+		if ( 'session' === $storage_type && isset( WC()->session ) ) {
 			WC()->session->set( $key, $value );
 		} elseif ( 'cookie' === $storage_type ) {
 			if ( is_null( $value ) ) {
