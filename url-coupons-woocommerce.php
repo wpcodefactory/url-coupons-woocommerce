@@ -3,12 +3,12 @@
 Plugin Name: URL Coupons for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
 Description: Let your customers apply standard WooCommerce discount coupons via URL.
-Version: 1.6.7
+Version: 1.6.8
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
 Domain Path: /langs
-WC tested up to: 7.4
+WC tested up to: 7.8
 */
 
 defined( 'ABSPATH' ) || exit;
