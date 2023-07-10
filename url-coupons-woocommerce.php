@@ -3,7 +3,7 @@
 Plugin Name: URL Coupons for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
 Description: Let your customers apply standard WooCommerce discount coupons via URL.
-Version: 1.6.8
+Version: 1.6.9
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
@@ -29,7 +29,7 @@ if ( 'url-coupons-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.6.7' );
+defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.6.9' );
 
 defined( 'ALG_WC_URL_COUPONS_FILE' ) || define( 'ALG_WC_URL_COUPONS_FILE', __FILE__ );
 
@@ -48,3 +48,18 @@ if ( ! function_exists( 'alg_wc_url_coupons' ) ) {
 }
 
 add_action( 'plugins_loaded', 'alg_wc_url_coupons' );
+
+/**
+ * alg_wc_url_coupons_hpos_compatibility.
+ *
+ * @version 1.6.9
+ * @since   1.6.9
+ *
+ * @return void
+ */
+function alg_wc_url_coupons_hpos_compatibility() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+}
+add_action( 'before_woocommerce_init', 'alg_wc_url_coupons_hpos_compatibility' );

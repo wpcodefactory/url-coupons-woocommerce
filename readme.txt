@@ -1,9 +1,9 @@
 === URL Coupons for WooCommerce ===
-Contributors: wpcodefactory, algoritmika, anbinder, Karzin, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, algoritmika, anbinder, Karzin, moshtafizur01, omardabbas, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 6.2
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,9 @@ Please try to change one option below at a time and test again:
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.6.9 - 10/07/2023 =
+* Declare compatibility with HPOS.
 
 = 1.6.8 - 18/06/2023 =
 * WC tested up to: 7.8.
