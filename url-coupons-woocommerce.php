@@ -1,14 +1,14 @@
 <?php
 /*
-Plugin Name: URL Coupons for WooCommerce
+Plugin Name: Coupons & Add to Cart by URL Links for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
 Description: Let your customers apply standard WooCommerce discount coupons via URL.
-Version: 1.6.9
+Version: 1.6.10
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
 Domain Path: /langs
-WC tested up to: 7.8
+WC tested up to: 8.0
 */
 
 defined( 'ABSPATH' ) || exit;

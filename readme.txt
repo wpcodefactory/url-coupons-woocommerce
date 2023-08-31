@@ -1,9 +1,9 @@
-=== URL Coupons for WooCommerce ===
+=== Coupons & Add to Cart by URL Links for WooCommerce ===
 Contributors: wpcodefactory, algoritmika, anbinder, Karzin, moshtafizur01, omardabbas, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 6.2
-Stable tag: 1.6.9
+Tested up to: 6.3
+Stable tag: 1.6.10
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -11,7 +11,7 @@ Let your customers apply standard WooCommerce discount coupons via URL.
 
 == Description ==
 
-**URL Coupons for WooCommerce plugin** allows your customers to apply coupons via URL.
+**Coupons & Add to Cart by URL Links for WooCommerce plugin** allows your customers to apply coupons via URL.
 
 = How it Works? =
 
@@ -27,7 +27,7 @@ Also you can optionally **hide standard coupon input field** on the cart and che
 
 = Premium Version =
 
-With [URL Coupons for WooCommerce Pro](https://wpfactory.com/item/url-coupons-woocommerce/) you can:
+With [Coupons & Add to Cart by URL Links for WooCommerce Pro](https://wpfactory.com/item/url-coupons-woocommerce/) you can:
 
 * Automatically **add coupon's products to the cart** for "Fixed product discount" coupons.
 * Set **redirect URL** (redirect to cart, redirect to checkout, redirect to custom URL, set redirect URL per coupon).
@@ -52,6 +52,11 @@ Please try to change one option below at a time and test again:
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.6.10 - 01/09/2023 =
+* WC tested up to: 8.0.
+* Tested up to: 6.3.
+* Update plugin title.
 
 = 1.6.9 - 10/07/2023 =
 * Declare compatibility with HPOS.
