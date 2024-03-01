@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Main Class
  *
- * @version 1.6.0
+ * @version 1.7.0
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -15,18 +15,28 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 	final class Alg_WC_URL_Coupons {
 
 		/**
+		 * $core.
+		 *
+		 * @since 1.7.0
+		 *
+		 * @var null
+		 */
+		public $core = null;
+
+		/**
 		 * Plugin version.
 		 *
-		 * @var   string
 		 * @since 1.0.0
+		 *
+		 * @var   string
 		 */
 		public $version = ALG_WC_URL_COUPONS_VERSION;
 
 		/**
 		 * Instance of the class.
 		 *
-		 * @var   Alg_WC_URL_Coupons The single instance of the class
 		 * @since 1.0.0
+		 * @var   Alg_WC_URL_Coupons The single instance of the class
 		 */
 		protected static $_instance = null;
 
