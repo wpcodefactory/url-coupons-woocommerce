@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 6.4
-Stable tag: 1.7.0
+Tested up to: 6.5
+Stable tag: 1.7.1
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,11 @@ Please try to change one option below at a time and test again:
 3. Start by visiting plugin settings at "WooCommerce > Settings > URL Coupons".
 
 == Changelog ==
+
+= 1.7.1 - 16/05/2024 =
+* Fix dynamic property PHP warning.
+* Tested up to: 6.5.
+* WC tested up to: 8.8.
 
 = 1.7.0 - 01/03/2024 =
 * Fix dynamic property PHP warning.

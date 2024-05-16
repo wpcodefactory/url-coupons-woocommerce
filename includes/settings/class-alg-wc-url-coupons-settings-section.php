@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Section Settings
  *
- * @version 1.1.0
+ * @version 1.7.1
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -15,6 +15,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Section' ) ) :
 
 	class Alg_WC_URL_Coupons_Settings_Section {
+
+		/**
+		 * Id.
+		 *
+		 * @version 1.7.1
+		 * @since   1.7.1
+		 */
+		public $id;
+
+		/**
+		 * Desc.
+		 *
+		 * @version 1.7.1
+		 * @since   1.7.1
+		 */
+		public $desc;
 
 		/**
 		 * Constructor.
