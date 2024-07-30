@@ -2,16 +2,16 @@
 # This file is distributed under the same license as the Coupons & Add to Cart by URL Links for WooCommerce Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.7.1\n"
+"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.7.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/url-coupons-for-woocommerce-by-algoritmika\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-16T17:06:22+02:00\n"
+"POT-Creation-Date: 2024-07-30T09:35:37+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.7.1\n"
+"X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: url-coupons-for-woocommerce-by-algoritmika\n"
 
 #. Plugin Name of the plugin
