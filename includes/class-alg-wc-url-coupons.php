@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Main Class
  *
- * @version 1.7.0
+ * @version 1.7.6
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -41,6 +41,15 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 		protected static $_instance = null;
 
 		/**
+		 * $file_system_path.
+		 *
+		 * @since 1.7.6
+		 *
+		 * @var   string
+		 */
+		protected $file_system_path;
+
+		/**
 		 * Main Alg_WC_URL_Coupons Instance
 		 *
 		 * Ensures only one instance of Alg_WC_URL_Coupons is loaded or can be loaded.
@@ -61,34 +70,82 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 		/**
 		 * Alg_WC_URL_Coupons Constructor.
 		 *
-		 * @version 1.6.0
+		 * @version 1.7.6
 		 * @since   1.0.0
 		 *
 		 * @access  public
 		 */
-		function __construct() {
-
-			// Check for active WooCommerce plugin
+		function init() {
+			// Check for active WooCommerce plugin.
 			if ( ! function_exists( 'WC' ) ) {
 				return;
 			}
 
-			// Set up localisation
+			// Adds cross-selling library.
+			$this->add_cross_selling_library();
+
+			// Move WC Settings tab to WPFactory menu.
+			$this->move_wc_settings_tab_to_wpfactory_menu();
+
+			// Set up localisation.
 			add_action( 'init', array( $this, 'localize' ) );
 
-			// Pro
+			// Pro.
 			if ( 'url-coupons-woocommerce-pro.php' === basename( ALG_WC_URL_COUPONS_FILE ) ) {
 				require_once 'pro/class-alg-wc-url-coupons-pro.php';
 			}
 
-			// Include required files
+			// Include required files.
 			$this->includes();
 
-			// Admin
+			// Admin.
 			if ( is_admin() ) {
 				$this->admin();
 			}
 
+		}
+
+		/**
+		 * add_cross_selling_library.
+		 *
+		 * @version 1.7.6
+		 * @since   1.7.6
+		 *
+		 * @return void
+		 */
+		function add_cross_selling_library(){
+			if ( ! is_admin() ) {
+				return;
+			}
+			// Cross-selling library.
+			$cross_selling = new \WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling();
+			$cross_selling->setup(
+				array( 'plugin_file_path' => $this->get_filesystem_path() )
+			);
+			$cross_selling->init();
+		}
+
+		/**
+		 * move_wc_settings_tab_to_wpfactory_submenu.
+		 *
+		 * @version 1.7.6
+		 * @since   1.7.6
+		 *
+		 * @return void
+		 */
+		function move_wc_settings_tab_to_wpfactory_menu() {
+			if ( ! is_admin() ) {
+				return;
+			}
+			// WC Settings tab as WPFactory submenu item.
+			$wpf_admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
+			$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu(
+				array(
+					'wc_settings_tab_id' => 'alg_wc_url_coupons',
+					'menu_title'         => __( 'Coupons by URL', 'cost-of-goods-for-woocommerce' ),
+					'page_title'         => __( 'Coupons & Add to Cart by URL', 'cost-of-goods-for-woocommerce' ),
+				)
+			);
 		}
 
 		/**
@@ -192,6 +249,30 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 		 */
 		function plugin_path() {
 			return untrailingslashit( plugin_dir_path( ALG_WC_URL_COUPONS_FILE ) );
+		}
+
+		/**
+		 * get_filesystem_path.
+		 *
+		 * @version 3.0.3
+		 * @since   2.4.3
+		 *
+		 * @return string
+		 */
+		function get_filesystem_path() {
+			return $this->file_system_path;
+		}
+
+		/**
+		 * set_filesystem_path.
+		 *
+		 * @version 3.0.3
+		 * @since   3.0.3
+		 *
+		 * @param   mixed  $file_system_path
+		 */
+		public function set_filesystem_path( $file_system_path ) {
+			$this->file_system_path = $file_system_path;
 		}
 
 	}

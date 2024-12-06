@@ -3,12 +3,13 @@
 Plugin Name: Coupons & Add to Cart by URL Links for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
 Description: Let your customers apply standard WooCommerce discount coupons via URL.
-Version: 1.7.1
+Version: 1.7.6
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
 Domain Path: /langs
-WC tested up to: 8.8
+WC tested up to: 9.4
+Requires Plugins: woocommerce
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -29,9 +30,14 @@ if ( 'url-coupons-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.7.1' );
+defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.7.6' );
 
 defined( 'ALG_WC_URL_COUPONS_FILE' ) || define( 'ALG_WC_URL_COUPONS_FILE', __FILE__ );
+
+// Composer autoload.
+if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+}
 
 require_once( 'includes/class-alg-wc-url-coupons.php' );
 
@@ -47,7 +53,12 @@ if ( ! function_exists( 'alg_wc_url_coupons' ) ) {
 	}
 }
 
-add_action( 'plugins_loaded', 'alg_wc_url_coupons' );
+// Initializes the plugin.
+add_action( 'plugins_loaded', function () {
+	$plugin = alg_wc_url_coupons();
+	$plugin->set_filesystem_path( __FILE__ );
+	$plugin->init();
+} );
 
 /**
  * alg_wc_url_coupons_hpos_compatibility.
