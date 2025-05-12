@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Core Class.
  *
- * @version 1.7.7
+ * @version 1.7.8
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -198,20 +198,20 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * translate_shortcode.
 		 *
-		 * @version 1.5.4
+		 * @version 1.7.8
 		 * @since   1.5.4
 		 */
 		function translate_shortcode( $atts, $content = '' ) {
 			// E.g.: `[alg_wc_url_coupons_translate lang="EN,DE" lang_text="Text for EN & DE" not_lang_text="Text for other languages"]`
 			if ( isset( $atts['lang_text'] ) && isset( $atts['not_lang_text'] ) && ! empty( $atts['lang'] ) ) {
 				return ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ?
-					$atts['not_lang_text'] : $atts['lang_text'];
+					wp_kses_post( $atts['not_lang_text'] ) : wp_kses_post( $atts['lang_text'] );
 			}
 			// E.g.: `[alg_wc_url_coupons_translate lang="EN,DE"]Text for EN & DE[/alg_wc_url_coupons_translate][alg_wc_url_coupons_translate not_lang="EN,DE"]Text for other languages[/alg_wc_url_coupons_translate]`
 			return (
 				( ! empty( $atts['lang'] ) && ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ) ||
 				( ! empty( $atts['not_lang'] ) && defined( 'ICL_LANGUAGE_CODE' ) && in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) ) ) )
-			) ? '' : $content;
+			) ? '' : wp_kses_post( $content );
 		}
 
 		/**
