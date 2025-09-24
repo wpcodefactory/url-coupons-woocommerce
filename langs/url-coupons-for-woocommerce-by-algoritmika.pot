@@ -1,17 +1,17 @@
-# Copyright (C) 2024 WPFactory
+# Copyright (C) 2025 WPFactory
 # This file is distributed under the same license as the Coupons & Add to Cart by URL Links for WooCommerce Pro plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.7.5\n"
+"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.7.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/url-coupons-for-woocommerce-by-algoritmika\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-09-05T11:29:57+02:00\n"
+"POT-Creation-Date: 2025-09-24T19:43:46+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: url-coupons-for-woocommerce-by-algoritmika\n"
 
 #. Plugin Name of the plugin
@@ -34,35 +34,35 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:490
+#: includes/class-alg-wc-url-coupons-core.php:514
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:175
 msgid "Coupon code applied successfully."
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:497
+#: includes/class-alg-wc-url-coupons-core.php:521
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:195
 msgid "Coupon \"%coupon_code%\" does not exist!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:503
+#: includes/class-alg-wc-url-coupons-core.php:527
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:185
 msgid "Coupon code already applied!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:572
+#: includes/class-alg-wc-url-coupons-core.php:596
 msgid "WP Loaded"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:573
+#: includes/class-alg-wc-url-coupons-core.php:597
 msgid "Init"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons.php:147
+#: includes/class-alg-wc-url-coupons.php:204
 msgid "Go Pro"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:146
-#: includes/pro/class-alg-wc-url-coupons-pro.php:159
+#: includes/pro/class-alg-wc-url-coupons-pro.php:154
+#: includes/pro/class-alg-wc-url-coupons-pro.php:167
 #: includes/settings/class-alg-wc-settings-url-coupons.php:27
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:64
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:284
@@ -70,24 +70,24 @@ msgstr ""
 msgid "URL Coupons"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:146
+#: includes/pro/class-alg-wc-url-coupons-pro.php:154
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:61
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:257
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:284
 msgid "Redirect URL"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:148
-#: includes/pro/class-alg-wc-url-coupons-pro.php:160
+#: includes/pro/class-alg-wc-url-coupons-pro.php:156
+#: includes/pro/class-alg-wc-url-coupons-pro.php:168
 msgid "For the \"%s\" plugin."
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:148
-#: includes/pro/class-alg-wc-url-coupons-pro.php:160
+#: includes/pro/class-alg-wc-url-coupons-pro.php:156
+#: includes/pro/class-alg-wc-url-coupons-pro.php:168
 msgid "URL Coupons for WooCommerce"
 msgstr ""
 
-#: includes/pro/class-alg-wc-url-coupons-pro.php:159
+#: includes/pro/class-alg-wc-url-coupons-pro.php:167
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:73
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:123
 msgid "Notice"

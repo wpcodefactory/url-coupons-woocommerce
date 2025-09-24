@@ -2,24 +2,30 @@
 /**
  * URL Coupons for WooCommerce - Core Class.
  *
- * @version 1.6.7
+ * @version 1.7.8
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-} // Exit if accessed directly
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 
 	class Alg_WC_URL_Coupons_Core {
 
 		/**
+		 * $priority.
+		 *
+		 * @version 1.7.7
+		 * @since   1.7.7
+		 */
+		public $priority;
+
+		/**
 		 * Constructor.
 		 *
-		 * @version 1.6.4
+		 * @version 1.7.7
 		 * @since   1.0.0
 		 *
 		 * @todo    [next] (feature) multiple keys, e.g. `apply_coupon,coupon`
@@ -28,10 +34,12 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		function __construct() {
 
 			if ( 'yes' === get_option( 'alg_wc_url_coupons_enabled', 'yes' ) ) {
+
 				// Apply URL coupon.
-				foreach ( array_keys( $this->get_possible_main_hooks() ) as $main_hook ) {
-					add_action( $main_hook, array( $this, 'apply_url_coupon_on_main_hook_triggered' ), ( '' !== ( $priority = get_option( 'alg_wc_url_coupons_priority', '' ) ) ? $priority : PHP_INT_MAX ) );
-				}
+				$priority_option = get_option( 'alg_wc_url_coupons_priority', '' );
+				$this->priority  = ( $priority_option !== '' ) ? (int) $priority_option : PHP_INT_MAX;
+				add_action( 'init', array( $this, 'setup_url_coupon_hooks' ), $this->priority );
+
 				// Force session.
 				add_action( 'alg_wc_url_coupons_before_coupon_applied', array( $this, 'maybe_force_start_session' ), 10 );
 				add_action( 'init', array( $this, 'maybe_force_start_session_everywhere' ), 10 );
@@ -85,6 +93,22 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 				add_action( 'wp_footer', array( $this, 'reload_page_via_js' ) );
 				add_filter( 'alg_wc_url_coupons_apply_url_coupon_validation', array( $this, 'do_not_apply_url_coupon_until_js_reload' ) );
 				add_filter( 'alg_wc_url_coupons_keys_to_remove_on_redirect', array( $this, 'remove_reloaded_param_via_js_on_redirect' ) );
+			}
+		}
+
+		/**
+		 * setup_url_coupon_hooks.
+		 *
+		 * @version 1.7.7
+		 * @since   1.7.7
+		 */
+		function setup_url_coupon_hooks() {
+			foreach ( array_keys( $this->get_possible_main_hooks() ) as $main_hook ) {
+				if ( 'init' !== $main_hook ) {
+					add_action( $main_hook, array( $this, 'apply_url_coupon_on_main_hook_triggered' ), $this->priority );
+				} else {
+					$this->apply_url_coupon_on_main_hook_triggered();
+				}
 			}
 		}
 
@@ -174,20 +198,20 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * translate_shortcode.
 		 *
-		 * @version 1.5.4
+		 * @version 1.7.8
 		 * @since   1.5.4
 		 */
 		function translate_shortcode( $atts, $content = '' ) {
 			// E.g.: `[alg_wc_url_coupons_translate lang="EN,DE" lang_text="Text for EN & DE" not_lang_text="Text for other languages"]`
 			if ( isset( $atts['lang_text'] ) && isset( $atts['not_lang_text'] ) && ! empty( $atts['lang'] ) ) {
 				return ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ?
-					$atts['not_lang_text'] : $atts['lang_text'];
+					wp_kses_post( $atts['not_lang_text'] ) : wp_kses_post( $atts['lang_text'] );
 			}
 			// E.g.: `[alg_wc_url_coupons_translate lang="EN,DE"]Text for EN & DE[/alg_wc_url_coupons_translate][alg_wc_url_coupons_translate not_lang="EN,DE"]Text for other languages[/alg_wc_url_coupons_translate]`
 			return (
 				( ! empty( $atts['lang'] ) && ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ) ||
 				( ! empty( $atts['not_lang'] ) && defined( 'ICL_LANGUAGE_CODE' ) && in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) ) ) )
-			) ? '' : $content;
+			) ? '' : wp_kses_post( $content );
 		}
 
 		/**
