@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Main Class
  *
- * @version 1.7.6
+ * @version 1.7.9
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -70,7 +70,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 		/**
 		 * Alg_WC_URL_Coupons Constructor.
 		 *
-		 * @version 1.7.6
+		 * @version 1.7.9
 		 * @since   1.0.0
 		 *
 		 * @access  public
@@ -85,7 +85,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 			$this->add_cross_selling_library();
 
 			// Move WC Settings tab to WPFactory menu.
-			$this->move_wc_settings_tab_to_wpfactory_menu();
+			add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
 
 			// Set up localisation.
 			add_action( 'init', array( $this, 'localize' ) );
@@ -128,7 +128,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 		/**
 		 * move_wc_settings_tab_to_wpfactory_submenu.
 		 *
-		 * @version 1.7.6
+		 * @version 1.7.9
 		 * @since   1.7.6
 		 *
 		 * @return void
@@ -142,8 +142,13 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons' ) ) :
 			$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu(
 				array(
 					'wc_settings_tab_id' => 'alg_wc_url_coupons',
-					'menu_title'         => __( 'Coupons by URL', 'cost-of-goods-for-woocommerce' ),
-					'page_title'         => __( 'Coupons & Add to Cart by URL', 'cost-of-goods-for-woocommerce' ),
+					'menu_title'         => __( 'Coupons by URL', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'page_title'         => __( 'Coupons & Add to Cart by URL', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'plugin_icon' => array(
+						'get_url_method'    => 'wporg_plugins_api',
+						'wporg_plugin_slug' => 'url-coupons-for-woocommerce-by-algoritmika',
+						'style'             => 'margin-left:-4px',
+					)
 				)
 			);
 		}
