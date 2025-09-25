@@ -1,9 +1,9 @@
 === Coupons & Add to Cart by URL Links for WooCommerce ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 6.8
-Stable tag: 1.7.9
+Stable tag: 1.8.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -162,6 +162,9 @@ Please try to change one option below at a time and test again:
 Once activated, access the plugin's settings by navigating to “WooCommerce > Settings” and look for the relevant tab.
 
 == Changelog ==
+
+= 1.8.0 - 25/09/2025 =
+* Removed algoritmika from contributors.
 
 = 1.7.9 - 24/09/2025 =
 * Updated admin menu library to version 1.0.8.
