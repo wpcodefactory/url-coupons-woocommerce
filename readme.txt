@@ -3,7 +3,7 @@ Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 7.0
-Stable tag: 1.8.1
+Stable tag: 1.8.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -163,9 +163,13 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 
 == Changelog ==
 
-= 1.8.1 - 23/05/2026 =
+= 1.8.2 - 23/05/2026 =
 * Tested up to: 7.0.
+
+= 1.8.1 - 28/04/2026 =
+* Dev - Improved deploy mechanism.
 * WC tested up to: 10.7.
+* Tested up to: 6.9.
 
 = 1.8.0 - 25/09/2025 =
 * Removed algoritmika from contributors.
