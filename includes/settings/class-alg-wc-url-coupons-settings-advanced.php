@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Advanced Section Settings.
  *
- * @version 1.6.4
+ * @version 1.8.3
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd.
@@ -31,7 +31,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Advanced' ) ) :
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.6.4
+		 * @version 1.8.3
 		 * @since   1.6.0
 		 *
 		 * @todo    [next] (feature) add "Action" option (defaults to `wp_loaded`)
@@ -54,18 +54,20 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Advanced' ) ) :
 					'type'     => 'checkbox',
 				),
 				array(
-					'title'    => __( 'Remove "add to cart" key', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc'     => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip' => sprintf( __( 'Will remove %s key on "%s" option.', 'url-coupons-for-woocommerce-by-algoritmika' ),
-						'<code>add-to-cart</code>',
-						__( 'Redirect URL', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' > ' . __( 'No redirect', 'url-coupons-for-woocommerce-by-algoritmika' ) ),
-					'id'       => 'alg_wc_url_coupons_remove_add_to_cart_key',
-					'default'  => 'yes',
-					'type'     => 'checkbox',
+					'title'             => __( 'Remove "add to cart" key', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'desc'              => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					/* translators: %1$s is the key name (e.g. add-to-cart), %2$s is the option path where it applies. */
+					'desc_tip'          => sprintf( __( 'Will remove %1$s key on "%2$s" option.', 'url-coupons-for-woocommerce-by-algoritmika' ), '<code>add-to-cart</code>', __( 'Redirect URL', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' > ' . __( 'No redirect', 'url-coupons-for-woocommerce-by-algoritmika' ) ) .
+						apply_filters( 'alg_wc_url_coupons_settings', '<br>' . sprintf( 'This option is available in <a href="%s" target="_blank">URL Coupons for WooCommerce Pro</a> plugin version only.', 'https://wpfactory.com/item/url-coupons-woocommerce/' ) ),
+					'id'                => 'alg_wc_url_coupons_remove_add_to_cart_key',
+					'default'           => 'yes',
+					'type'              => 'checkbox',
+					'custom_attributes' => apply_filters( 'alg_wc_url_coupons_settings', array( 'disabled' => 'disabled' ) ),
 				),
 				array(
 					'title'    => __( 'Force coupon redirect', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'desc'     => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					/* translators: %s is replaced with the action name (e.g. add-to-cart). */
 					'desc_tip' => sprintf( __( 'Force coupon redirect after %s action.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						'<code>add-to-cart</code>' ),
 					'id'       => 'alg_wc_url_coupons_add_to_cart_action_force_coupon_redirect',
@@ -96,13 +98,16 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Advanced' ) ) :
 					'checkboxgroup' => 'end',
 				),
 				array(
-					'title'    => __( 'Javascript reload', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc'     => __( 'Reloads the page via javascript when the coupon is detected from the URL', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip' => __( 'Enable if the coupon is not being applied without products in cart.', 'url-coupons-for-woocommerce-by-algoritmika' ) . '<br />' .
-					              sprintf( __( 'Make sure that %s is set as %s so the %s cookie can be created.', 'url-coupons-for-woocommerce-by-algoritmika' ), '<strong>' . __( 'Data storage type', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong>', '<strong>' . __( 'Cookie', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong>', '<code>alg_wc_url_coupons</code>' ),
-					'id'       => 'alg_wc_url_coupons_javascript_reload',
-					'default'  => 'no',
-					'type'     => 'checkbox',
+					'title'             => __( 'Javascript reload', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'desc'              => __( 'Reloads the page via javascript when the coupon is detected from the URL', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'desc_tip'          => __( 'Enable if the coupon is not being applied without products in cart.', 'url-coupons-for-woocommerce-by-algoritmika' ) . '<br />' .
+						/* translators: %1$s is the data storage type option, %2$s is the expected value (Cookie), %3$s is the cookie name. */
+						sprintf( __( 'Make sure that %1$s is set as %2$s so the %3$s cookie can be created.', 'url-coupons-for-woocommerce-by-algoritmika' ), '<strong>' . __( 'Data storage type', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong>', '<strong>' . __( 'Cookie', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong>', '<code>alg_wc_url_coupons</code>' ) .
+						apply_filters( 'alg_wc_url_coupons_settings', '<br>' . sprintf( 'This option is available in <a href="%s" target="_blank">URL Coupons for WooCommerce Pro</a> plugin version only.', 'https://wpfactory.com/item/url-coupons-woocommerce/' ) ),
+					'id'                => 'alg_wc_url_coupons_javascript_reload',
+					'default'           => 'no',
+					'type'              => 'checkbox',
+					'custom_attributes' => apply_filters( 'alg_wc_url_coupons_settings', array( 'disabled' => 'disabled' ) ),
 				),
 				array(
 					'type' => 'sectionend',
@@ -157,6 +162,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Advanced' ) ) :
 				),
 				array(
 					'title'   => __( 'Extra cookie', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					/* translators: %s is replaced with the cookie name. */
 					'desc'    => sprintf( __( 'Set %s cookie when URL coupon has been applied', 'url-coupons-for-woocommerce-by-algoritmika' ), '<code>alg_wc_url_coupons</code>' ),
 					'id'      => 'alg_wc_url_coupons_cookie_enabled',
 					'default' => 'no',

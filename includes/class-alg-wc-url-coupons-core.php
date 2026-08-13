@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Core Class.
  *
- * @version 1.7.8
+ * @version 1.8.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.7.7
+		 * @version 1.8.3
 		 * @since   1.0.0
 		 *
 		 * @todo    [next] (feature) multiple keys, e.g. `apply_coupon,coupon`
@@ -54,7 +54,6 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 					add_action( 'alg_wc_url_coupons_coupon_applied', array( $this, 'delay_notice' ), 10, 3 );
 					add_action( 'wp_head', array( $this, 'display_delayed_notice' ) );
 				}
-				add_action( 'alg_wc_url_coupons_after_coupon_applied', array( $this, 'redirect' ), PHP_INT_MAX, 3 );
 				// Hide coupons.
 				if ( 'yes' === get_option( 'alg_wc_url_coupons_cart_hide_coupon', 'no' ) ) {
 					add_filter( 'woocommerce_coupons_enabled', array( $this, 'hide_coupon_field_on_cart' ), PHP_INT_MAX );
@@ -89,10 +88,6 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 				add_shortcode( 'alg_wc_url_coupons_translate', array( $this, 'translate_shortcode' ) );
 				// Data storage.
 				add_filter( 'alg_wc_url_coupons_data_storage_type', array( $this, 'set_data_storage_type' ) );
-				// Javascript reload.
-				add_action( 'wp_footer', array( $this, 'reload_page_via_js' ) );
-				add_filter( 'alg_wc_url_coupons_apply_url_coupon_validation', array( $this, 'do_not_apply_url_coupon_until_js_reload' ) );
-				add_filter( 'alg_wc_url_coupons_keys_to_remove_on_redirect', array( $this, 'remove_reloaded_param_via_js_on_redirect' ) );
 			}
 		}
 
@@ -323,11 +318,12 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * add_to_cart_action_force_coupon_redirect.
 		 *
-		 * @version 1.3.2
+		 * @version 1.8.3
 		 * @since   1.3.2
 		 */
 		function add_to_cart_action_force_coupon_redirect( $url, $adding_to_cart ) {
 			$key = get_option( 'alg_wc_url_coupons_key', 'alg_apply_coupon' );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
 			return ( isset( $_GET[ $key ] ) ? remove_query_arg( 'add-to-cart' ) : $url );
 		}
 
@@ -401,12 +397,13 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * maybe_set_additional_cookie.
 		 *
-		 * @version 1.3.0
+		 * @version 1.8.3
 		 * @since   1.3.0
 		 */
 		function maybe_set_additional_cookie( $coupon_code ) {
 			if ( 'yes' === get_option( 'alg_wc_url_coupons_cookie_enabled', 'no' ) ) {
-				setcookie( 'alg_wc_url_coupons', $coupon_code, ( time() + get_option( 'alg_wc_url_coupons_cookie_sec', 1209600 ) ), '/', $_SERVER['SERVER_NAME'], false );
+				$server_name = isset( $_SERVER['SERVER_NAME'] ) ? sanitize_text_field( wp_unslash( $_SERVER['SERVER_NAME'] ) ) : '';
+				setcookie( 'alg_wc_url_coupons', $coupon_code, ( time() + get_option( 'alg_wc_url_coupons_cookie_sec', 1209600 ) ), '/', $server_name, false );
 			}
 		}
 
@@ -443,28 +440,6 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		}
 
 		/**
-		 * redirect.
-		 *
-		 * @version 1.6.4
-		 * @since   1.3.0
-		 *
-		 * @todo    [now] [!] (dev) different/same redirect on `! $result` (e.g. when coupon is applied twice)?
-		 */
-		function redirect( $coupon_code, $key, $result ) {
-			if ( ! $result ) {
-				return;
-			}
-			$keys_to_remove = array( $key );
-			if ( 'yes' === get_option( 'alg_wc_url_coupons_remove_add_to_cart_key', 'yes' ) ) {
-				$keys_to_remove[] = 'add-to-cart';
-			}
-			$keys_to_remove = apply_filters( 'alg_wc_url_coupons_keys_to_remove_on_redirect', $keys_to_remove );
-			$redirect_url   = apply_filters( 'alg_wc_url_coupons_redirect_url', remove_query_arg( $keys_to_remove ), $coupon_code, $key );
-			wp_safe_redirect( $redirect_url );
-			exit;
-		}
-
-		/**
 		 * do_delay_coupon.
 		 *
 		 * @version 1.6.0
@@ -496,7 +471,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * delay_coupon.
 		 *
-		 * @version 1.6.4
+		 * @version 1.8.3
 		 * @since   1.6.0
 		 *
 		 * @todo    [next] (dev) `alg_wc_url_coupons_delay_coupon`: require force session start?
@@ -517,8 +492,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 					}
 					$result = true;
 					do_action( 'alg_wc_url_coupons_coupon_delayed', $coupon_code, $key, $result );
-				} else {
-					$notice = ( isset( $notices['error_not_found'] ) ? $notices['error_not_found'] : __( 'Coupon "%coupon_code%" does not exist!', 'url-coupons-for-woocommerce-by-algoritmika' ) );
+				} else {				/* translators: %coupon_code% is a placeholder replaced with the actual coupon code. */					$notice = ( isset( $notices['error_not_found'] ) ? $notices['error_not_found'] : __( 'Coupon "%coupon_code%" does not exist!', 'url-coupons-for-woocommerce-by-algoritmika' ) );
 					if ( '' != $notice ) {
 						wc_add_notice( str_replace( '%coupon_code%', $coupon_code, $notice ), 'error' );
 					}
@@ -538,7 +512,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		 *
 		 * e.g. http://example.com/?alg_apply_coupon=test
 		 *
-		 * @version 1.6.4
+		 * @version 1.8.3
 		 * @since   1.0.0
 		 *
 		 * @todo    [maybe] (feature) options to add products to cart with query arg?
@@ -555,7 +529,8 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 				)
 			);
 			$key         = $args['key'];
-			$coupon_code = ! empty( $args['coupon_code'] ) ? sanitize_text_field( $args['coupon_code'] ) : ( isset( $_GET[ $key ] ) ? sanitize_text_field( $_GET[ $key ] ) : '' );
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$coupon_code = ! empty( $args['coupon_code'] ) ? sanitize_text_field( $args['coupon_code'] ) : ( isset( $_GET[ $key ] ) ? sanitize_text_field( wp_unslash( $_GET[ $key ] ) ) : '' );
 			if (
 				! empty( $coupon_code ) &&
 				function_exists( 'WC' ) &&
@@ -610,108 +585,6 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 			$result = WC()->cart->add_discount( $coupon_code );
 			do_action( 'alg_wc_url_coupons_coupon_applied', $coupon_code, $key, $result );
 			return $result;
-		}
-
-		/**
-		 * reload_page_via_js.
-		 *
-		 * @version 1.6.4
-		 * @since   1.6.4
-		 */
-		function reload_page_via_js() {
-			if ( 'yes' !== get_option( 'alg_wc_url_coupons_javascript_reload', 'no' ) ) {
-				return;
-			}
-			$js_data = array(
-				'key'            => get_option( 'alg_wc_url_coupons_key', 'alg_apply_coupon' ),
-				'create_cookie'  => 'cookie' === get_option( 'alg_wc_url_coupons_data_storage_type', 'session' ),
-				'reloaded_param' => $this->get_reloaded_param_via_js(),
-				'cookie_path'    => COOKIEPATH ? COOKIEPATH : '/',
-				'cookie_domain'  => COOKIE_DOMAIN,
-				'cookie_max_age' => get_option( 'alg_wc_url_coupons_cookie_sec', 1209600 ),
-			);
-			?>
-			<script>
-				jQuery(function ($) {
-					let data = JSON.parse('<?php echo json_encode( $js_data ); ?>');
-					let script = {
-						data: null,
-						init: function () {
-							const params = new Proxy(new URLSearchParams(window.location.search), {
-								get: (searchParams, prop) => searchParams.get(prop)
-							});
-							if (params[this.data.key] && params[this.data.key].length && (!params[this.data.reloaded_param])) {
-								if (this.data.create_cookie) {
-									script.setCookie('alg_wc_url_coupons', JSON.stringify([params[this.data.key]]));
-								}
-								if ('URLSearchParams' in window) {
-									var searchParams = new URLSearchParams(window.location.search);
-									searchParams.set(this.data.reloaded_param, "1");
-									window.location.search = searchParams.toString();
-								}
-							}
-						},
-						setCookie: function (name, value) {
-							let max_age = script.data.cookie_max_age;
-							let path = script.data.cookie_path;
-							let domain = script.data.cookie_domain;
-							document.cookie = name + '=' + encodeURIComponent(value) + (max_age ? '; max-age=' + max_age : '') + (path ? '; path=' + path : '') + (domain ? '; domain=' + domain : '');
-						}
-					};
-					script.data = data;
-					script.init();
-				});
-			</script>
-			<?php
-		}
-
-		/**
-		 * do_not_apply_url_coupon_until_js_reload.
-		 *
-		 * @version 1.6.4
-		 * @since   1.6.4
-		 *
-		 * @param $validation
-		 *
-		 * @return boolean
-		 */
-		function do_not_apply_url_coupon_until_js_reload( $validation ) {
-			if (
-				'yes' === get_option( 'alg_wc_url_coupons_javascript_reload', 'no' ) &&
-				! isset( $_GET[ $this->get_reloaded_param_via_js() ] )
-			) {
-				$validation = false;
-			}
-			return $validation;
-		}
-
-		/**
-		 * remove_reloaded_param_via_js_on_redirect.
-		 *
-		 * @version 1.6.4
-		 * @since   1.6.4
-		 *
-		 * @param $keys_to_remove
-		 *
-		 * @return array
-		 */
-		function remove_reloaded_param_via_js_on_redirect( $keys_to_remove ) {
-			if ( 'yes' === get_option( 'alg_wc_url_coupons_javascript_reload', 'no' ) ) {
-				$keys_to_remove[] = $this->get_reloaded_param_via_js();
-			}
-			return $keys_to_remove;
-		}
-
-		/**
-		 * get_reloaded_param_via_js.
-		 *
-		 * @version 1.6.4
-		 * @since   1.6.4
-		 *
-		 * @return string
-		 */
-		function get_reloaded_param_via_js() {
-			return apply_filters( 'alg_wc_url_coupons_javascript_reloaded_param', 'reloaded' );
 		}
 
 	}

@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Notices Section Settings
  *
- * @version 1.6.0
+ * @version 1.8.3
  * @since   1.6.0
  *
  * @author  Algoritmika Ltd.
@@ -31,7 +31,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Notices' ) ) :
 		/**
 		 * get_settings.
 		 *
-		 * @version 1.6.0
+		 * @version 1.8.3
 		 * @since   1.6.0
 		 *
 		 * @todo    [maybe] (desc) Custom notice: better desc?
@@ -68,8 +68,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Notices' ) ) :
 				),
 				array(
 					'title'             => __( 'Notice per coupon', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc'              => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip'          => sprintf( __( 'Will add "%s" field to each coupon admin edit page.', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'desc'              => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),				/* translators: %s is replaced with the field label that will be added. */					'desc_tip'          => sprintf( __( 'Will add "%s" field to each coupon admin edit page.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						__( 'URL Coupons', 'url-coupons-for-woocommerce-by-algoritmika' ) . ': ' . __( 'Notice', 'url-coupons-for-woocommerce-by-algoritmika' ) ),
 					'id'                => 'alg_wc_url_coupons_notice_per_coupon',
 					'default'           => 'no',
@@ -111,7 +110,8 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Notices' ) ) :
 				),
 				array(
 					'desc'              => __( 'Notice type', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip'          => sprintf( __( 'Ignored, unless "%s" option is set to "%s".', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				/* translators: %1$s is the option name (Notice method), %2$s is the required value (Add). */
+				'desc_tip'          => sprintf( __( 'Ignored, unless "%1$s" option is set to "%2$s".', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						__( 'Notice method', 'url-coupons-for-woocommerce-by-algoritmika' ), __( 'Add', 'url-coupons-for-woocommerce-by-algoritmika' ) ),
 					'id'                => 'alg_wc_url_coupons_notice_type',
 					'default'           => 'success',
@@ -126,7 +126,8 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_Notices' ) ) :
 				),
 				array(
 					'desc'               => __( 'Notice glue', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip'           => sprintf( __( 'Ignored, unless "%s" option is set to "%s".', 'url-coupons-for-woocommerce-by-algoritmika' ),
+				/* translators: %1$s is the option name (Notice method), %2$s is the required value (Append). */
+				'desc_tip'           => sprintf( __( 'Ignored, unless "%1$s" option is set to "%2$s".', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						__( 'Notice method', 'url-coupons-for-woocommerce-by-algoritmika' ), __( 'Append', 'url-coupons-for-woocommerce-by-algoritmika' ) ),
 					'id'                 => 'alg_wc_url_coupons_notice_glue',
 					'default'            => '<br>',

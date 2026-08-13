@@ -3,7 +3,7 @@ Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
 Tested up to: 7.0
-Stable tag: 1.8.2
+Stable tag: 1.8.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -162,6 +162,15 @@ Please try to change one option below at a time and test again:
 Once activated, access the plugin's settings by navigating to “WooCommerce > Settings” and look for the relevant tab.
 
 == Changelog ==
+
+= 1.8.3 - 13/08/2026 =
+* Fix - Output escaping, input sanitization and unslashing, nonce verification.
+* Fix - Fixed some I18n issues.
+* Fix - Code refactoring.
+* Dev - Updated Admin Menu library to version 1.1.2.
+* Dev - Updated Cross-Selling library to version 1.1.3.
+* Dev - Updated Key Manager library to version 1.0.9.
+* WC tested up to: 11.0.
 
 = 1.8.2 - 23/05/2026 =
 * Tested up to: 7.0.

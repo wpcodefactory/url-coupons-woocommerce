@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Settings
  *
- * @version 1.6.0
+ * @version 1.8.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -56,7 +56,8 @@ if ( ! class_exists( 'Alg_WC_Settings_URL_Coupons' ) ) :
 		 */
 		function get_settings() {
 			global $current_section;
-			return array_merge( apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ), array(
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WooCommerce core settings hook convention.
+		return array_merge( apply_filters( 'woocommerce_get_settings_' . $this->id . '_' . $current_section, array() ), array(
 				array(
 					'title' => __( 'Reset Settings', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'type'  => 'title',
@@ -103,12 +104,12 @@ if ( ! class_exists( 'Alg_WC_Settings_URL_Coupons' ) ) :
 		/**
 		 * admin_notice_settings_reset.
 		 *
-		 * @version 1.1.0
+		 * @version 1.8.3
 		 * @since   1.1.0
 		 */
 		function admin_notice_settings_reset() {
 			echo '<div class="notice notice-warning is-dismissible"><p><strong>' .
-			     __( 'Your settings have been reset.', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong></p></div>';
+			     esc_html__( 'Your settings have been reset.', 'url-coupons-for-woocommerce-by-algoritmika' ) . '</strong></p></div>';
 		}
 
 		/**

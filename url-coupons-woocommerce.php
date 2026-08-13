@@ -3,13 +3,15 @@
 Plugin Name: Coupons & Add to Cart by URL Links for WooCommerce
 Plugin URI: https://wpfactory.com/item/url-coupons-woocommerce/
 Description: Let your customers apply standard WooCommerce discount coupons via URL.
-Version: 1.8.2
+Version: 1.8.3
 Author: WPFactory
 Author URI: https://wpfactory.com
 Text Domain: url-coupons-for-woocommerce-by-algoritmika
 Domain Path: /langs
-WC tested up to: 10.7
+WC tested up to: 11.0
 Requires Plugins: woocommerce
+License: GNU General Public License v3.0
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 defined( 'ABSPATH' ) || exit;
@@ -30,7 +32,7 @@ if ( 'url-coupons-woocommerce.php' === basename( __FILE__ ) ) {
 	}
 }
 
-defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.8.2' );
+defined( 'ALG_WC_URL_COUPONS_VERSION' ) || define( 'ALG_WC_URL_COUPONS_VERSION', '1.8.3' );
 
 defined( 'ALG_WC_URL_COUPONS_FILE' ) || define( 'ALG_WC_URL_COUPONS_FILE', __FILE__ );
 

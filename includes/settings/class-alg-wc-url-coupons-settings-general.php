@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - General Section Settings
  *
- * @version 1.6.0
+ * @version 1.8.3
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -82,7 +82,8 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 				array(
 					'title'    => __( 'URL coupons key', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'desc_tip' => __( 'URL key. If you change this, make sure it\'s unique and is not used anywhere on your site (e.g. by another plugin).', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc'     => '<p>' . sprintf( __( 'Your customers can apply shop\'s standard coupons by visiting URL. E.g.: %s.', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					/* translators: %s is replaced with an example URL showing how to apply a coupon via URL. */
+				'desc'     => '<p>' . sprintf( __( 'Your customers can apply shop\'s standard coupons by visiting URL. E.g.: %s.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 							'<code>' . site_url() . '/?' . '<strong>' . get_option( 'alg_wc_url_coupons_key', 'alg_apply_coupon' ) . '</strong>' . '=couponcode' . '</code>' ) . '</p>',
 					'id'       => 'alg_wc_url_coupons_key',
 					'default'  => 'alg_apply_coupon',
@@ -169,8 +170,9 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 				),
 				array(
 					'desc'     => __( 'Success notice', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
-					              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
+				'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
+				              /* translators: %s is replaced with available placeholder names. */
+				              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
 					'id'       => 'alg_wc_url_coupons_delay_coupon_notice[success]',
 					'default'  => __( 'Coupon code applied successfully.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'type'     => 'textarea',
@@ -179,8 +181,9 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 				array(
 					'desc'     => __( 'Error notice', 'url-coupons-for-woocommerce-by-algoritmika' ) . ': ' .
 					              __( 'Coupon already applied', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
-					              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
+				'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
+				              /* translators: %s is replaced with available placeholder names. */
+				              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
 					'id'       => 'alg_wc_url_coupons_delay_coupon_notice[error_applied]',
 					'default'  => __( 'Coupon code already applied!', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'type'     => 'textarea',
@@ -189,9 +192,11 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 				array(
 					'desc'     => __( 'Error notice', 'url-coupons-for-woocommerce-by-algoritmika' ) . ': ' .
 					              __( 'Coupon does not exist', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
-					              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
+				'desc_tip' => __( 'Ignored if empty.', 'url-coupons-for-woocommerce-by-algoritmika' ) . ' ' .
+				              /* translators: %s is replaced with available placeholder names. */
+				              sprintf( __( 'Available placeholder(s): %s.', 'url-coupons-for-woocommerce-by-algoritmika' ), '%coupon_code%' ),
 					'id'       => 'alg_wc_url_coupons_delay_coupon_notice[error_not_found]',
+					/* translators: %coupon_code% is a placeholder replaced with the actual coupon code. */
 					'default'  => __( 'Coupon "%coupon_code%" does not exist!', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'type'     => 'textarea',
 					'css'      => 'width:100%;',
@@ -280,6 +285,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 				array(
 					'title'             => __( 'Redirect URL per coupon', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'desc'              => __( 'Enable', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					/* translators: %s is replaced with the field label that will be added. */
 					'desc_tip'          => sprintf( __( 'Will add "%s" field to each coupon admin edit page.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						__( 'URL Coupons', 'url-coupons-for-woocommerce-by-algoritmika' ) . ': ' . __( 'Redirect URL', 'url-coupons-for-woocommerce-by-algoritmika' ) ),
 					'id'                => 'alg_wc_url_coupons_redirect_per_coupon',
@@ -296,8 +302,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Settings_General' ) ) :
 			$notes = array(
 				array(
 					'title' => __( 'Notes', 'url-coupons-for-woocommerce-by-algoritmika' ),
-					'desc'  => '<span class="dashicons dashicons-info"></span> ' .
-					           sprintf( __( 'If you are using URL to a page where no WooCommerce notices are displayed, try adding our %s shortcode to the content.', 'url-coupons-for-woocommerce-by-algoritmika' ),
+					'desc'  => '<span class="dashicons dashicons-info"></span> ' .				           /* translators: %s is replaced with the shortcode name. */					           sprintf( __( 'If you are using URL to a page where no WooCommerce notices are displayed, try adding our %s shortcode to the content.', 'url-coupons-for-woocommerce-by-algoritmika' ),
 						           '<code>[alg_wc_url_coupons_print_notices]</code>' ) . ' ' .
 					           __( 'Please note that this shortcode will print all WooCommerce notices (i.e. not only from our plugin, or notices related to the coupons).', 'url-coupons-for-woocommerce-by-algoritmika' ),
 					'type'  => 'title',
