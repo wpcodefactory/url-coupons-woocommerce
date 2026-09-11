@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: woocommerce, coupons, url coupons, woo commerce
 Requires at least: 4.4
-Tested up to: 7.0
-Stable tag: 1.8.3
+Tested up to: 7.1
+Stable tag: 1.8.4
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -162,6 +162,13 @@ Please try to change one option below at a time and test again:
 Once activated, access the plugin's settings by navigating to “WooCommerce > Settings” and look for the relevant tab.
 
 == Changelog ==
+
+= 1.8.4 - 11/09/2026 =
+* Tested up to: 7.1.
+* WC tested up to: 11.1.
+* Dev - `[alg_wc_url_coupons_print_notices]` shortcode moved from the Pro version to the free version.
+* Dev - Updated Cross-selling library to version 1.1.5.
+* Dev - Updated Key Manager library to version 1.1.1.
 
 = 1.8.3 - 13/08/2026 =
 * Fix - Output escaping, input sanitization and unslashing, nonce verification.

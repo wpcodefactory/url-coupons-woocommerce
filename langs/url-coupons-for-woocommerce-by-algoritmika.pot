@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3.0.
 msgid ""
 msgstr ""
-"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.8.3\n"
+"Project-Id-Version: url-coupons-for-woocommerce-by-algoritmika 1.8.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/url-coupons-for-woocommerce-by-algoritmika\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-08-13T23:31:58+02:00\n"
+"POT-Creation-Date: 2026-09-12T00:24:55+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: url-coupons-for-woocommerce-by-algoritmika\n"
@@ -34,27 +34,27 @@ msgstr ""
 msgid "https://wpfactory.com"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:489
+#: includes/class-alg-wc-url-coupons-core.php:500
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:177
 msgid "Coupon code applied successfully."
 msgstr ""
 
 #. translators: %coupon_code% is a placeholder replaced with the actual coupon code.
-#: includes/class-alg-wc-url-coupons-core.php:495
+#: includes/class-alg-wc-url-coupons-core.php:506
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:200
 msgid "Coupon \"%coupon_code%\" does not exist!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:501
+#: includes/class-alg-wc-url-coupons-core.php:512
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:188
 msgid "Coupon code already applied!"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:571
+#: includes/class-alg-wc-url-coupons-core.php:582
 msgid "WP Loaded"
 msgstr ""
 
-#: includes/class-alg-wc-url-coupons-core.php:572
+#: includes/class-alg-wc-url-coupons-core.php:583
 msgid "Init"
 msgstr ""
 
@@ -71,8 +71,8 @@ msgid "Go Pro"
 msgstr ""
 
 #. translators: %s is replaced with the field label that will be added.
-#: includes/pro/class-alg-wc-url-coupons-pro.php:161
-#: includes/pro/class-alg-wc-url-coupons-pro.php:175
+#: includes/pro/class-alg-wc-url-coupons-pro.php:148
+#: includes/pro/class-alg-wc-url-coupons-pro.php:162
 #: includes/settings/class-alg-wc-settings-url-coupons.php:27
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:64
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:290
@@ -81,7 +81,7 @@ msgid "URL Coupons"
 msgstr ""
 
 #. translators: %1$s is the key name (e.g. add-to-cart), %2$s is the option path where it applies.
-#: includes/pro/class-alg-wc-url-coupons-pro.php:161
+#: includes/pro/class-alg-wc-url-coupons-pro.php:148
 #: includes/settings/class-alg-wc-url-coupons-settings-advanced.php:60
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:262
 #: includes/settings/class-alg-wc-url-coupons-settings-general.php:290
@@ -89,19 +89,19 @@ msgid "Redirect URL"
 msgstr ""
 
 #. translators: %s is replaced with the plugin name.
+#: includes/pro/class-alg-wc-url-coupons-pro.php:151
 #: includes/pro/class-alg-wc-url-coupons-pro.php:164
-#: includes/pro/class-alg-wc-url-coupons-pro.php:177
 msgid "For the \"%s\" plugin."
 msgstr ""
 
 #. translators: %s is replaced with the plugin name.
+#: includes/pro/class-alg-wc-url-coupons-pro.php:151
 #: includes/pro/class-alg-wc-url-coupons-pro.php:164
-#: includes/pro/class-alg-wc-url-coupons-pro.php:177
 msgid "URL Coupons for WooCommerce"
 msgstr ""
 
 #. translators: %s is replaced with the field label that will be added.
-#: includes/pro/class-alg-wc-url-coupons-pro.php:175
+#: includes/pro/class-alg-wc-url-coupons-pro.php:162
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:72
 #: includes/settings/class-alg-wc-url-coupons-settings-notices.php:123
 msgid "Notice"

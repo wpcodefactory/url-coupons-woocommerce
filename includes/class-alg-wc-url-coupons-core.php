@@ -2,7 +2,7 @@
 /**
  * URL Coupons for WooCommerce - Core Class.
  *
- * @version 1.8.3
+ * @version 1.8.4
  * @since   1.0.0
  *
  * @author  Algoritmika Ltd.
@@ -25,7 +25,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 		/**
 		 * Constructor.
 		 *
-		 * @version 1.8.3
+		 * @version 1.8.4
 		 * @since   1.0.0
 		 *
 		 * @todo    [next] (feature) multiple keys, e.g. `apply_coupon,coupon`
@@ -86,6 +86,7 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 				}
 				// Shortcodes.
 				add_shortcode( 'alg_wc_url_coupons_translate', array( $this, 'translate_shortcode' ) );
+				add_shortcode( 'alg_wc_url_coupons_print_notices', array( $this, 'print_notices' ) );
 				// Data storage.
 				add_filter( 'alg_wc_url_coupons_data_storage_type', array( $this, 'set_data_storage_type' ) );
 			}
@@ -207,6 +208,16 @@ if ( ! class_exists( 'Alg_WC_URL_Coupons_Core' ) ) :
 				( ! empty( $atts['lang'] ) && ( ! defined( 'ICL_LANGUAGE_CODE' ) || ! in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['lang'] ) ) ) ) ) ) ||
 				( ! empty( $atts['not_lang'] ) && defined( 'ICL_LANGUAGE_CODE' ) && in_array( strtolower( ICL_LANGUAGE_CODE ), array_map( 'trim', explode( ',', strtolower( $atts['not_lang'] ) ) ) ) )
 			) ? '' : wp_kses_post( $content );
+		}
+
+		/**
+		 * print_notices.
+		 *
+		 * @version 1.8.4
+		 * @since   1.4.0
+		 */
+		function print_notices( $atts, $content = '' ) {
+			return ( function_exists( 'wc_print_notices' ) ? wc_print_notices( true ) : '' );
 		}
 
 		/**
